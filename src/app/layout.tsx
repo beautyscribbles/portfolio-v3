@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={satoshi.className}>
+      <body className={`${satoshi.className} text-primary`}>
         {children}
         <TailwindIndicator />
       </body>

@@ -22,6 +22,11 @@ export const satoshiLight = localFont({
   display: "swap",
 });
 
+export const satoshiMedium = localFont({
+  src: "./../../app/satoshi/Satoshi-Medium.otf",
+  display: "swap",
+});
+
 export const satoshiBlack = localFont({
   src: "./../../app/satoshi/Satoshi-Black.otf",
   display: "swap",

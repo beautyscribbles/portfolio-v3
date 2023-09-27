@@ -1,3 +1,12 @@
+import Navbar from "@/components/Navbar";
+import Overview from "@/components/Overview";
+import { Fragment } from "react";
+
 export default function Home() {
-  return <p>hey</p>;
+  return (
+    <Fragment>
+      <Navbar />
+      <Overview />
+    </Fragment>
+  );
 }
