@@ -12,9 +12,16 @@ body {
 }
 
 @layer utilities {
+  .stroked {
+
+    color: transparent;
+    /* -webkit-text-stroke: 1px rgba(48, 48, 48, 0.25); */
+    -webkit-text-stroke: 1px #a2a2a2;
+  }
+
   .center {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
   }

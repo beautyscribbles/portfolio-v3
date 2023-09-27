@@ -8,9 +8,9 @@ const Overview = () => {
 
   return (
     <section className="h-screen relative">
-      <Container className="center">
-        <article className="flex flex-col gap-2 max-w-[600px] md:gap-1">
-          <h1 className={`${black} font-bold text-5xl`}>
+      <Container className="">
+        <article className="flex flex-col gap-2  center max-w-[600px] md:gap-1">
+          <h1 className={`${black} font-bold text-clamp`}>
             Hi, I&rsquo;m Monique.
           </h1>
           <p
@@ -21,7 +21,7 @@ const Overview = () => {
           <p className="text-[0.875rem] leading-6 ">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem
             itaque suscipit perspiciatis doloremque ea nulla tempore atque
-            necessitatibus quam molestias!
+            necessitatibus quam molestias! Consectetur, adipisicing elit.
           </p>
         </article>
       </Container>
