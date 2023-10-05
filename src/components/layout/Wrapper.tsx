@@ -1,5 +1,5 @@
 import Content from "@/components/Content";
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/components/sidebar/Sidebar";
 
 const Wrapper = () => {
   return (

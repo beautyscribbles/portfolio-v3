@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import PageNumber from "@/components/sidebar/PageNumber";
 import Container from "@/components/ui/Container";
 
 type Section = { id: number; name: string; link: string };
@@ -16,24 +17,23 @@ const Sidebar = () => {
   const list = sections.map((section) => {
     return (
       <li key={section.id} className="">
-        <a href="#"># {section.name}</a>
+        <a href="#" className="grid grid-cols-[1fr,2fr] gap-2 w-32">
+          <p className="grid place-self-center">{section.id}.</p>
+          <p>#&nbsp;{section.name}</p>
+        </a>
       </li>
     );
   });
 
   return (
     <aside className="h-full">
-      <Container className=" h-full">
-        <div>
-          <Navbar />
-        </div>
+      <Container className="h-full">
+        <Navbar />
 
-        <div className="h-[80%]  grid grid-cols-[20%,80%]">
-          <div className="grid place-items-center">
-            <p>00</p>
-          </div>
+        <div className="h-[80%] grid grid-cols-[20%,80%]">
+          <PageNumber />
           <ul className="grid place-items-center">
-            <div className="flex flex-col gap-4">{list}</div>
+            <div className="flex flex-col gap-6">{list}</div>
           </ul>
         </div>
       </Container>
