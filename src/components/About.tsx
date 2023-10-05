@@ -1,6 +1,6 @@
 import Heading from "@/components/Heading";
 import Section from "@/components/Section";
-import { satoshiBold, satoshiMedium } from "@/components/utils/font";
+import { satoshiMedium } from "@/components/utils/font";
 import { Fragment } from "react";
 
 const About = () => {
@@ -11,10 +11,10 @@ const About = () => {
 
         <div>
           <Fragment>
-            <h3 className={`${satoshiBold.className} text-2xl`}>
+            <h3 className={`${satoshiMedium.className} text-2xl`}>
               Monique McIntyre
             </h3>
-            <p className={satoshiMedium.className}>Frontend Developer</p>
+            <p>Front End Developer</p>
           </Fragment>
           <br></br>
           <Fragment>

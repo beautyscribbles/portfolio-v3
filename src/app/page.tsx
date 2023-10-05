@@ -1,21 +1,11 @@
-import Content from "@/components/Content";
-import Sidebar from "@/components/Sidebar";
-import Container from "@/components/ui/Container";
-import { Fragment } from "react";
+import Wrapper from "@/components/layout/Wrapper";
 
 export default function Home() {
   return (
-    <Fragment>
-      <div className="h-screen  overflow-hidden overflow-y-scroll">
-        <Container className="grid grid-cols-1">
-          <div className="hidden">
-            <Sidebar />
-          </div>
-          <main className=" ">
-            <Content />
-          </main>
-        </Container>
+    <div className="fixed h-screen top-0 left-0 w-screen ">
+      <div className="max-w-7xl mx-auto">
+        <Wrapper />
       </div>
-    </Fragment>
+    </div>
   );
 }

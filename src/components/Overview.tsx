@@ -8,7 +8,7 @@ const Overview = () => {
 
   return (
     <Section className="h-screen relative" id={0}>
-      <article className="flex flex-col gap-2  md:gap-1">
+      <article className="flex flex-col gap-2  md:gap-3">
         <h1 className={`${black} font-bold text-clamp leading-[1.1]`}>
           Hi, I&rsquo;m Monique.
         </h1>
@@ -17,7 +17,7 @@ const Overview = () => {
         >
           {title}
         </p>
-        <p className="text-[0.875rem] leading-6 ">
+        <p className="text-[0.875rem] leading-6 md:text-base">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem
           itaque suscipit perspiciatis doloremque ea nulla tempore atque
           necessitatibus quam molestias! Consectetur, adipisicing elit.
