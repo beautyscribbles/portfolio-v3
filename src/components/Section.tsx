@@ -8,7 +8,10 @@ interface Props {
 const Section = (props: Props) => {
   const { children, id, className } = props;
   return (
-    <section className={className} id={`${id}`}>
+    <section
+      className={`${className} h-full grid place-items-center`}
+      id={`${id}`}
+    >
       {children}
     </section>
   );

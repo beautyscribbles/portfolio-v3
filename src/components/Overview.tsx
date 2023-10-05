@@ -1,4 +1,4 @@
-import Container from "@/components/ui/Container";
+import Section from "@/components/Section";
 import { satoshiBlack, satoshiMedium } from "@/components/utils/font";
 
 const Overview = () => {
@@ -7,25 +7,23 @@ const Overview = () => {
   const black = satoshiBlack.className;
 
   return (
-    <section className="h-screen relative">
-      <Container className="">
-        <article className="flex flex-col gap-2  center max-w-[600px] md:gap-1">
-          <h1 className={`${black} font-bold text-clamp`}>
-            Hi, I&rsquo;m Monique.
-          </h1>
-          <p
-            className={`${medium} tracking-wide text-[1.2rem] text-secondary md:text-2xl`}
-          >
-            {title}
-          </p>
-          <p className="text-[0.875rem] leading-6 ">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem
-            itaque suscipit perspiciatis doloremque ea nulla tempore atque
-            necessitatibus quam molestias! Consectetur, adipisicing elit.
-          </p>
-        </article>
-      </Container>
-    </section>
+    <Section className="h-screen relative" id={0}>
+      <article className="flex flex-col gap-2  md:gap-1">
+        <h1 className={`${black} font-bold text-clamp leading-[1.1]`}>
+          Hi, I&rsquo;m Monique.
+        </h1>
+        <p
+          className={`${medium} tracking-wide text-[1.2rem] text-secondary md:text-2xl`}
+        >
+          {title}
+        </p>
+        <p className="text-[0.875rem] leading-6 ">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem
+          itaque suscipit perspiciatis doloremque ea nulla tempore atque
+          necessitatibus quam molestias! Consectetur, adipisicing elit.
+        </p>
+      </article>
+    </Section>
   );
 };
 
