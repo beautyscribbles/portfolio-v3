@@ -4,19 +4,29 @@
 
 :root {
   --main: #191919;
-
 }
 
 body {
   background-color: var(--main);
 }
 
+@layer components {
+  .paragraph {
+    @apply text-sm md:text-[0.92rem] max-w-2xl;
+  }
+}
+
 @layer utilities {
+
   .stroked {
 
     color: transparent;
     -webkit-text-stroke: 1px rgba(48, 48, 48, 0.25);
     /* -webkit-text-stroke: 1px #a2a2a2; */
+  }
+
+  .heading {
+    font-size: clamp(2.7rem, 10vw, 4rem);
   }
 
   .center {

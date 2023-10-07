@@ -9,8 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontSize: {
-        clamp: "clamp(3.5rem, 5vw, 6rem)",
-        // strokeClamp: "clamp(3rem, 10vw, 15rem)",
+        clamp: "clamp(3.5rem, 4vw, 5rem)",
       },
       colors: {
         primary: "#fff",
