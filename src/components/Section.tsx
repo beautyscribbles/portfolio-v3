@@ -9,7 +9,7 @@ const Section = (props: Props) => {
   const { children, id, className } = props;
   return (
     <section
-      className={`${className} h-full flex items-center justify-start`}
+      className={`${className} h-screen w-full flex items-center justify-start`}
       id={`${id}`}
     >
       {children}

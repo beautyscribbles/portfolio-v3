@@ -12,7 +12,7 @@ body {
 
 @layer components {
   .paragraph {
-    @apply text-sm md:text-[0.92rem] max-w-2xl;
+    @apply text-sm md:text-[0.92rem] max-w-xl;
   }
 }
 

@@ -5,7 +5,7 @@ import { Fragment } from "react";
 
 const About = () => {
   return (
-    <Section id={0} className="relative h-screen ">
+    <Section id={3} className="relative">
       <article className=" flex flex-col gap-16">
         <Heading text="about me." />
 
@@ -25,10 +25,7 @@ const About = () => {
               <br></br>
               Convallis tellus aliquet morbi morbi leo quis tincidunt et
               commodo. Non consequat fusce sit molestie nec dis. At enim lacus
-              scelerisque integer ac cursus consequat. Convallis tellus aliquet
-              morbi morbi leo quis tincidunt et commodo. Non consequat fusce sit
-              molestie nec dis. At enim lacus scelerisque integer ac cursus
-              consequat.
+              scelerisque integer ac cursus consequat.
             </p>
             <p className={`opacity-20 text-sm`}>&#60;&#47;p&#62;</p>
           </Fragment>

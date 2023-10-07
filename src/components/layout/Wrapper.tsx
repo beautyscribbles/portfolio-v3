@@ -7,7 +7,7 @@ const Wrapper = () => {
       <div className="hidden h-screen md:grid md:fixed md:w-[40%] lg:w-[35%]">
         <Sidebar />
       </div>
-      <main className="h-full md:absolute md:left-[40%] lg:left-[35%] ">
+      <main className="h-full md:absolute md:left-[40%] lg:left-[35%] md:w-[60%] lg:w-[65%]">
         <Content />
       </main>
     </div>
