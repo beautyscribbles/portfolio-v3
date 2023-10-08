@@ -6,6 +6,10 @@
   --main: #191919;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--main);
 }

@@ -18,7 +18,10 @@ const Skills = () => {
   });
 
   return (
-    <Section id={1} className="relative min-h-[60rem] md:min-h-0 ">
+    <Section
+      sectionName="skills"
+      className="relative min-h-[60rem] md:min-h-0 "
+    >
       <article className="flex flex-col gap-16">
         <Heading text="skills." />
 

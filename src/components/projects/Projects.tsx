@@ -30,7 +30,7 @@ const Projects = () => {
   });
 
   return (
-    <Section id={4} className="min-h-[60rem] sm:min-h-0 ">
+    <Section sectionName="projects" className="min-h-[60rem] sm:min-h-0 ">
       <article className="flex flex-col gap-16 w-full">
         <Heading text="projects." />
 

@@ -5,7 +5,7 @@ import { Fragment } from "react";
 
 const About = () => {
   return (
-    <Section id={3} className="relative">
+    <Section sectionName="about" className="relative">
       <article className=" flex flex-col gap-16">
         <Heading text="about me." />
 
