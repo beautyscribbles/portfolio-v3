@@ -15,8 +15,8 @@ type Props = {
 type Section = { id: number; name: string; link: string };
 
 type SectionContext = {
-  currentSection: string;
-  setCurrentSection: Dispatch<SetStateAction<string>>;
+  currentSection: Section;
+  setCurrentSection: Dispatch<SetStateAction<Section>>;
   sections: Section[];
   getSectionDetails(name: string): Section;
 };
@@ -26,15 +26,15 @@ export const SectionContext = createContext<SectionContext | null>(null);
 const sections: Section[] = [
   { id: 0, name: "intro", link: "intro" },
   { id: 1, name: "about", link: "about" },
-  { id: 2, name: "projects", link: "projects" },
-  { id: 3, name: "skills", link: "skills" },
+  { id: 2, name: "skills", link: "skills" },
+  { id: 3, name: "projects", link: "projects" },
   { id: 4, name: "contact", link: "contact" },
   { id: 5, name: "blogs", link: "blogs" },
 ];
 
 export default function SectionContextProvider(props: Props) {
   const { children } = props;
-  const [currentSection, setCurrentSection] = useState(sections[0].link);
+  const [currentSection, setCurrentSection] = useState(sections[0]);
   // console.log(currentSection);
 
   function getSectionDetails(name: string) {

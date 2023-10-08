@@ -14,8 +14,8 @@ const Content = () => {
 
       <Overview />
       <About />
-      <Projects />
       <Skills />
+      <Projects />
     </Container>
   );
 };

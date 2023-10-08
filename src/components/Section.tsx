@@ -11,11 +11,9 @@ interface Props {
 const Section = (props: Props) => {
   const { children, sectionName, className } = props;
 
-  const { getSectionDetails, setCurrentSection, currentSection } =
-    useSectionContext();
+  const { getSectionDetails, setCurrentSection } = useSectionContext();
   const ref = useRef<HTMLElement>(null);
-
-  const sectionDetails = getSectionDetails(sectionName).link;
+  const sectionDetails = getSectionDetails(sectionName);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -32,14 +30,10 @@ const Section = (props: Props) => {
     );
 
     const element = ref.current;
-    if (element) {
-      observer.observe(element);
-    }
+    if (element) observer.observe(element);
 
     return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
+      if (element) observer.unobserve(element);
     };
   }, [sectionDetails, setCurrentSection]);
 
@@ -47,7 +41,7 @@ const Section = (props: Props) => {
     <section
       ref={ref}
       className={`${className} h-screen w-full flex items-center justify-start`}
-      id={`${sectionDetails}`}
+      id={`${sectionDetails.link}`}
     >
       {children}
     </section>

@@ -1,7 +1,7 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
-import PageNumber from "@/components/sidebar/PageNumber";
+import SectionNumber from "@/components/sidebar/SectionNumber";
 import Container from "@/components/ui/Container";
 import { useSectionContext } from "@/context/SectionContext";
 import Link from "next/link";
@@ -12,17 +12,23 @@ const Sidebar = () => {
 
   useEffect(() => {
     function updateHash() {
-      setCurrentSection(window.location.hash.slice(1));
+      const section = sections.find(
+        (section) => section.link === window.location.hash.slice(1)
+      );
+
+      if (!section) throw new Error("Section does not exist");
+
+      setCurrentSection(section);
     }
     window.addEventListener("hashchange", updateHash);
 
     return () => {
       window.removeEventListener("hashchange", updateHash);
     };
-  }, [setCurrentSection]);
+  }, [sections, setCurrentSection]);
 
   const list = sections.map((section) => {
-    const active = currentSection === section.link;
+    const active = currentSection.link === section.link;
 
     const activeLink = active
       ? `text-primary opacity-100`
@@ -31,7 +37,7 @@ const Sidebar = () => {
     return (
       <li
         key={section.id}
-        onClick={() => setCurrentSection(section.link)}
+        onClick={() => setCurrentSection(section)}
         className={`cursor-pointer ${activeLink} hover:text-primary hover:opacity-100 transition-all ease-in-out duration-300
         `}
       >
@@ -52,7 +58,7 @@ const Sidebar = () => {
         <Navbar />
 
         <div className="h-[80%] grid grid-cols-[20%,80%]">
-          <PageNumber />
+          <SectionNumber />
           <ul className="grid place-items-center  ">
             <div className="flex flex-col gap-5">{list}</div>
           </ul>
