@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
 import Overview from "@/components/Overview";
 import Projects from "@/components/projects/Projects";
@@ -16,6 +17,7 @@ const Content = () => {
       <About />
       <Skills />
       <Projects />
+      <Contact />
     </Container>
   );
 };

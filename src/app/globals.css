@@ -18,6 +18,10 @@ body {
   .paragraph {
     @apply text-sm md:text-[0.92rem] max-w-xl;
   }
+
+  .animation {
+    @apply transition-all duration-300 ease-in-out;
+  }
 }
 
 @layer utilities {
