@@ -5,19 +5,21 @@ import { technologies } from "@/components/skills/technologies";
 const Skills = () => {
   const skills = technologies.map((tech) => {
     const { name, icon } = tech;
+
     return (
       <li
-        key={tech.name}
+        key={name}
         className="grid grid-cols-[15%,1fr] items-center gap-6 pb-4 "
       >
         <span className="w-7 flex items-center justify-start">{icon}</span>
-        <span className="">{tech.name}</span>
+        <span>{name}</span>
       </li>
     );
   });
+
   return (
     <Section id={1} className="relative min-h-[60rem] md:min-h-0 ">
-      <article className=" flex flex-col gap-16">
+      <article className="flex flex-col gap-16">
         <Heading text="skills." />
 
         <div>

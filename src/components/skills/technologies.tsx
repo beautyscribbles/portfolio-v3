@@ -14,13 +14,7 @@ import {
 } from "react-icons/bi";
 import { FaFigma, FaSass } from "react-icons/fa";
 import { IoLogoCss3 } from "react-icons/io";
-import {
-  SiExpress,
-  SiNextdotjs,
-  SiNpm,
-  SiStyledcomponents,
-  SiSupabase,
-} from "react-icons/si";
+import { SiExpress, SiNextdotjs } from "react-icons/si";
 
 type Technology = {
   icon: React.ReactElement<IconType>;
@@ -36,6 +30,7 @@ export const technologies: Technology[] = [
   { icon: <AiFillHtml5 size={reg} />, name: "HTML" },
   { icon: <IoLogoCss3 size={reg} />, name: "CSS" },
   { icon: <FaSass size={reg} />, name: "Sass" },
+  { icon: <BiLogoTailwindCss size={reg} />, name: "TailwindCSS" },
   { icon: <BiLogoReact size={reg} />, name: "React" },
   { icon: <BiLogoRedux size={reg} />, name: "Redux" },
   { icon: <BiLogoNodejs size={reg} />, name: "Node.js" },
@@ -43,11 +38,10 @@ export const technologies: Technology[] = [
   { icon: <SiExpress size={sml} />, name: "Express.js" },
   { icon: <BiLogoMongodb size={reg} />, name: "MongoDB" },
   { icon: <BiLogoFirebase size={reg} />, name: "Firebase" },
-  { icon: <SiSupabase size={sml} />, name: "Supabase" },
-  { icon: <SiNpm size={sml} />, name: "npm" },
+  // { icon: <SiSupabase size={sml} />, name: "Supabase" },
+  // { icon: <SiNpm size={sml} />, name: "npm" },
   { icon: <FaFigma size={sml} />, name: "Figma" },
-  { icon: <AiFillGithub size={reg} />, name: "GitHub" },
-  { icon: <BiLogoTailwindCss size={reg} />, name: "Tailwind CSS" },
+  { icon: <AiFillGithub size={reg} />, name: "Git" },
   { icon: <BiLogoGraphql size={reg} />, name: "GraphQL" },
-  { icon: <SiStyledcomponents size={reg} />, name: "Styled Com." },
+  // { icon: <SiStyledcomponents size={reg} />, name: "Styled Com." },
 ];

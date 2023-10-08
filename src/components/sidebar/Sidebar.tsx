@@ -30,10 +30,10 @@ const Sidebar = () => {
       <Container className="h-full">
         <Navbar />
 
-        <div className="h-[80%] grid grid-cols-[20%,80%]">
+        <div className="h-[80%] grid grid-cols-[20%,80%] ">
           <PageNumber />
           <ul className="grid place-items-center">
-            <div className="flex flex-col gap-6">{list}</div>
+            <div className="flex flex-col gap-5">{list}</div>
           </ul>
         </div>
       </Container>
