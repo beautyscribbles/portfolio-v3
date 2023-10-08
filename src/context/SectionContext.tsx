@@ -15,41 +15,41 @@ type Props = {
 type Section = { id: number; name: string; link: string };
 
 type SectionContext = {
-  currentSection: number;
-  setCurrentSection: Dispatch<SetStateAction<number>>;
+  currentSection: string;
+  setCurrentSection: Dispatch<SetStateAction<string>>;
   sections: Section[];
-  getSectionLink(name: string): string;
+  getSectionDetails(name: string): Section;
 };
 
 export const SectionContext = createContext<SectionContext | null>(null);
 
+const sections: Section[] = [
+  { id: 0, name: "intro", link: "intro" },
+  { id: 1, name: "about", link: "about" },
+  { id: 2, name: "projects", link: "projects" },
+  { id: 3, name: "skills", link: "skills" },
+  { id: 4, name: "contact", link: "contact" },
+  { id: 5, name: "blogs", link: "blogs" },
+];
+
 export default function SectionContextProvider(props: Props) {
   const { children } = props;
+  const [currentSection, setCurrentSection] = useState(sections[0].link);
+  // console.log(currentSection);
 
-  const sections: Section[] = [
-    { id: 0, name: "intro", link: "intro" },
-    { id: 1, name: "about", link: "about" },
-    { id: 2, name: "projects", link: "projects" },
-    { id: 3, name: "skills", link: "skills" },
-    { id: 4, name: "contact", link: "contact" },
-    { id: 5, name: "blogs", link: "blogs" },
-  ];
-
-  function getSectionLink(name: string) {
+  function getSectionDetails(name: string) {
     const section = sections.find((section) => section.name === name);
 
     if (!section) throw new Error("Section does not exist");
 
-    return section.link;
+    return section;
   }
-
-  const [currentSection, setCurrentSection] = useState(sections[0].id);
 
   const values = {
     currentSection,
     setCurrentSection,
     sections,
-    getSectionLink,
+    getSectionDetails,
   };
 
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 import { useSectionContext } from "@/context/SectionContext";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 interface Props {
   children: React.ReactNode;
   sectionName: string;
@@ -10,14 +10,44 @@ interface Props {
 
 const Section = (props: Props) => {
   const { children, sectionName, className } = props;
-  const { getSectionLink } = useSectionContext();
 
-  const id = getSectionLink(sectionName);
+  const { getSectionDetails, setCurrentSection, currentSection } =
+    useSectionContext();
+  const ref = useRef<HTMLElement>(null);
+
+  const sectionDetails = getSectionDetails(sectionName).link;
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCurrentSection(sectionDetails);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+      }
+    );
+
+    const element = ref.current;
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, [sectionDetails, setCurrentSection]);
 
   return (
     <section
+      ref={ref}
       className={`${className} h-screen w-full flex items-center justify-start`}
-      id={`${id}`}
+      id={`${sectionDetails}`}
     >
       {children}
     </section>

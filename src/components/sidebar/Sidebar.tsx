@@ -5,15 +5,36 @@ import PageNumber from "@/components/sidebar/PageNumber";
 import Container from "@/components/ui/Container";
 import { useSectionContext } from "@/context/SectionContext";
 import Link from "next/link";
-
-type Section = { id: number; name: string; link: string };
+import { useEffect } from "react";
 
 const Sidebar = () => {
-  const { sections } = useSectionContext();
+  const { sections, currentSection, setCurrentSection } = useSectionContext();
+
+  useEffect(() => {
+    function updateHash() {
+      setCurrentSection(window.location.hash.slice(1));
+    }
+    window.addEventListener("hashchange", updateHash);
+
+    return () => {
+      window.removeEventListener("hashchange", updateHash);
+    };
+  }, [setCurrentSection]);
 
   const list = sections.map((section) => {
+    const active = currentSection === section.link;
+
+    const activeLink = active
+      ? `text-primary opacity-100`
+      : "text-secondary opacity-50";
+
     return (
-      <li key={section.id} className="">
+      <li
+        key={section.id}
+        onClick={() => setCurrentSection(section.link)}
+        className={`cursor-pointer ${activeLink} hover:text-primary hover:opacity-100 transition-all ease-in-out duration-300
+        `}
+      >
         <Link
           href={`#${section.link}`}
           className="grid grid-cols-[1fr,2fr] gap-2 w-32"
