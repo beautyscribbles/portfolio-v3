@@ -9,7 +9,7 @@ const Overview = () => {
   return (
     <Section className="h-screen relative" sectionName="intro">
       <article className="flex flex-col gap-2 md:gap-3">
-        <h1 className={`${black} font-bold text-clamp leading-[1.1]`}>
+        <h1 className={`${black} font-bold text-clamp leading-[1.1] `}>
           Hi, I&rsquo;m Monique.
         </h1>
         <p

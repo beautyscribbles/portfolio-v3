@@ -24,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${satoshi.className} text-primary`}>
         <SectionContextProvider>{children}</SectionContextProvider>
+        <div id="portal"></div>
         <TailwindIndicator />
       </body>
     </html>
