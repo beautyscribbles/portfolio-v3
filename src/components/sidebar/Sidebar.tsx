@@ -5,27 +5,9 @@ import SectionNumber from "@/components/sidebar/SectionNumber";
 import Container from "@/components/ui/Container";
 import { useSectionContext } from "@/context/SectionContext";
 import Link from "next/link";
-import { useEffect } from "react";
 
 const Sidebar = () => {
   const { sections, currentSection, setCurrentSection } = useSectionContext();
-
-  useEffect(() => {
-    function updateHash() {
-      const section = sections.find(
-        (section) => section.link === window.location.hash.slice(1)
-      );
-
-      if (!section) throw new Error("Section does not exist");
-
-      setCurrentSection(section);
-    }
-    window.addEventListener("hashchange", updateHash);
-
-    return () => {
-      window.removeEventListener("hashchange", updateHash);
-    };
-  }, [sections, setCurrentSection]);
 
   const list = sections.map((section) => {
     const active = currentSection.link === section.link;
@@ -59,7 +41,7 @@ const Sidebar = () => {
 
         <div className="h-[80%] grid grid-cols-[20%,80%]">
           <SectionNumber />
-          <ul className="grid place-items-center  ">
+          <ul className="grid place-items-center">
             <div className="flex flex-col gap-5">{list}</div>
           </ul>
         </div>

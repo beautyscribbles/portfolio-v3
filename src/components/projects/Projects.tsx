@@ -1,5 +1,5 @@
-"use client";
 import Heading from "@/components/Heading";
+import Section from "@/components/Section";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,9 +16,9 @@ const Projects = () => {
 
     return (
       <Link
-        href={`/project/${image.name}`}
+        scroll={false}
+        href={`/project/${image.name}#projects`}
         id={image.id.toString()}
-        onClick={() => console.log(image.name)}
         key={image.id}
         className={`relative ${masonry} flex items-center opacity-60 hover:opacity-100 transition-all ease-in-out duration-300 cursor-pointer`}
       >
@@ -34,14 +34,15 @@ const Projects = () => {
   });
 
   return (
-    // <Section sectionName="projects" className="min-h-[60rem] sm:min-h-0 ">
-    <article className="flex flex-col gap-24 w-full">
-      <Heading text="projects." />
+    <Section sectionName="projects" className="min-h-[60rem] sm:min-h-0 ">
+      <article className="flex flex-col gap-24 w-full">
+        <Heading text="projects." />
 
-      <ul className="grid grid-cols-1 gap-8 w-full  sm:grid-cols-2">
-        {projects}
-      </ul>
-    </article>
+        <ul className="grid grid-cols-1 gap-8 w-full  sm:grid-cols-2">
+          {projects}
+        </ul>
+      </article>
+    </Section>
   );
 };
 
