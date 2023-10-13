@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${satoshi.className} text-primary`}>
+      <body className={`${satoshi.className} text-primary grainy`}>
         <SectionContextProvider>
           <Fragment>{children}</Fragment>
           <Fragment>{modal}</Fragment>
