@@ -19,7 +19,7 @@ const Section = (props: Props) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setCurrentSection(sectionDetails);
+          // setCurrentSection(sectionDetails);
         }
       },
       {

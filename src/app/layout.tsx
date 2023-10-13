@@ -2,6 +2,7 @@ import { TailwindIndicator } from "@/components/utils/tailwind-indicator";
 import SectionContextProvider from "@/context/SectionContext";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Fragment } from "react";
 import "./globals.css";
 
 // Font files can be colocated inside of `app`
@@ -17,14 +18,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className={`${satoshi.className} text-primary`}>
-        <SectionContextProvider>{children}</SectionContextProvider>
-        <div id="portal"></div>
+        <SectionContextProvider>
+          <Fragment>{children}</Fragment>
+          <Fragment>{modal}</Fragment>
+        </SectionContextProvider>
+
         <TailwindIndicator />
       </body>
     </html>
