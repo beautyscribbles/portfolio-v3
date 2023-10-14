@@ -1,4 +1,6 @@
+import ProjectDetails from "@/components/projects/ProjectDetails";
 import Modal from "@/components/ui/Modal";
+import ProjectBackground from "@/components/ui/ProjectBackground";
 
 interface Props {
   params: { id: string };
@@ -10,7 +12,9 @@ const page = (props: Props) => {
   } = props;
   return (
     <Modal>
-      <div className="fixed top-0 bg-blue-200">{id}</div>;
+      <ProjectBackground>
+        <ProjectDetails project={id} />
+      </ProjectBackground>
     </Modal>
   );
 };
