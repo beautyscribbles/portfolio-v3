@@ -20,7 +20,7 @@ const Skills = () => {
   return (
     <Section
       sectionName="skills"
-      className="relative min-h-[60rem] md:min-h-0 "
+      className="relative min-h-[50rem] md:min-h-0 "
     >
       <article className="flex flex-col gap-16">
         <Heading text="skills." />

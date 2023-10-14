@@ -16,7 +16,9 @@ const Projects = () => {
 
     return (
       <Link
-        href={`#projects/${image.name}`}
+        scroll={false}
+        href={`/project/${image.name}#projects`}
+        id={image.id.toString()}
         key={image.id}
         className={`relative ${masonry} flex items-center opacity-60 hover:opacity-100 transition-all ease-in-out duration-300 cursor-pointer`}
       >
