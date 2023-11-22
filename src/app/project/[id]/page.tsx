@@ -10,7 +10,7 @@ const page = (props: Props) => {
     params: { id },
   } = props;
   return (
-    <Container>
+    <Container className="max-w-2xl">
  
       <ProjectDetails project={id} />
     </Container>

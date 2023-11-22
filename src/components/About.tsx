@@ -19,13 +19,13 @@ const About = () => {
           <br></br>
           <Fragment>
             <p className={`opacity-20 text-sm`}>&#60;p&#62;</p>
-            <p className="paragraph ">
-              Ut integer phasellus in vel at in ultricies. <br></br> Non semper
-              sed fermentum nunc tellus vitae porta ipsum fermentum. <br></br>
+            <p className="paragraph">
+              7x binger of Archer 🏆 and 3x binger of Arrested Development. 🏆
               <br></br>
-              Convallis tellus aliquet morbi morbi leo quis tincidunt et
-              commodo. Non consequat fusce sit molestie nec dis. At enim lacus
-              scelerisque integer ac cursus consequat.
+              Professional book re-reader with a weakness for anything mafia related. 📚
+            
+              <br></br> <br></br>
+              Hi, again! I&apos;m Monique. I&apos;m a frontend developer with a passion for blending creativity with functionality. I enjoy building websites that are both beautiful and user-friendly. I believe in simplicity and minimalism and enjoy bringing that ethos into every project I touch. Let&apos;s build something amazing together!
             </p>
             <p className={`opacity-20 text-sm`}>&#60;&#47;p&#62;</p>
           </Fragment>

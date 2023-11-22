@@ -12,10 +12,7 @@ interface Props {
 
 const ProjectDetails = (props: Props) => {
   const { project } = props;
-
-  console.log(project);
-   const currentProject = projectInfo.get(project)!
-  console.log(currentProject);
+  const currentProject = projectInfo.get(project)!
 
   return (
     <section className="flex flex-col gap-12 py-8">
@@ -67,9 +64,7 @@ const ProjectDetails = (props: Props) => {
               </p>
             );
           })
-        }
-
-       
+        }   
       </article>
     </section>
   );

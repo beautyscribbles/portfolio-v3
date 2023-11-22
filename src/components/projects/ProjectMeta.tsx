@@ -1,10 +1,13 @@
+import { URL } from "@/components/utils/projectInfo";
 import Link from "next/link";
 import { IconType } from "react-icons";
+
+
 
 interface Props {
   icon: React.ReactElement<IconType>;
   name: string;
-  content ?: string | string[];
+  content ?: URL | string[];
 }
 
 
@@ -16,17 +19,18 @@ const ProjectMeta = (props: Props) => {
       <span>{icon}</span>
       <span className="text-secondary w-fit">{name}</span>
 
-      {typeof content === 'string' &&
-        <Link href={content} className="text-overflow line-clamp-1 hover:underline hover:underline-offset-4 cursor-pointer">
-          {content}
-        </Link>
-      }
-
-      {typeof content === 'object' &&
+      
+      {Array.isArray(content) ? 
         <span className="text-overflow line-clamp-1">
           {content.join(', ')}
         </span>
+      :
+        <Link href={content?.href as string} className="text-overflow line-clamp-1 hover:underline hover:underline-offset-4 cursor-pointer">
+          {content?.name}
+        </Link>
       }
+
+      
     </p>
   );
 };
