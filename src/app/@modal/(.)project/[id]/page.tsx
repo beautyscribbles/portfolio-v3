@@ -1,6 +1,5 @@
 import ProjectDetails from "@/components/projects/ProjectDetails";
 import Modal from "@/components/ui/Modal";
-import ProjectBackground from "@/components/ui/ProjectBackground";
 
 interface Props {
   params: { id: string };
@@ -12,9 +11,7 @@ const page = (props: Props) => {
   } = props;
   return (
     <Modal>
-      <ProjectBackground>
-        <ProjectDetails project={id} />
-      </ProjectBackground>
+      <ProjectDetails project={id} />
     </Modal>
   );
 };
