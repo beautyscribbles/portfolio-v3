@@ -27,7 +27,7 @@ const platforms = [
     username: "monique.mcin8@gmail.com",
     link: "",
   },
-  { icon: <AiFillLinkedin size={size} />, username: "monique", link: "" },
+  { icon: <AiFillLinkedin size={size} />, username: "monique mcintyre", link: "https://www.linkedin.com/in/monique-mcintyre/" },
 ];
 
 const Contact = () => {

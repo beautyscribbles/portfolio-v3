@@ -20,6 +20,8 @@ const Section = (props: Props) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setCurrentSection(sectionDetails);
+          //update hash in url
+          window.location.hash = sectionDetails.link;
         }
       },
       {

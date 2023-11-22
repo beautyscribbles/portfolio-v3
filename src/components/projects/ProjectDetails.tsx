@@ -14,13 +14,21 @@ const ProjectDetails = (props: Props) => {
   const { project } = props;
   const currentProject = projectInfo.get(project)!
 
+  const paragraphs = Object.values(currentProject.paragraphs).map((paragraph, index) => {
+            return (
+              <p className="parapgraph" key={index}>
+                {paragraph}
+              </p>
+            );
+          })
+
   return (
     <section className="flex flex-col gap-12 py-8">
       <header className="border-b-[1px] border-secondary/80">
         {currentProject.icon}
         <br></br>
 
-        <h1 className={`${satoshiBlack.className} text-4xl`}>{project}</h1>
+        <h1 className={`${satoshiBlack.className} text-4xl lowercase`}>{currentProject.name}</h1>
         <br></br>
 
         <div className="py-4">
@@ -52,19 +60,11 @@ const ProjectDetails = (props: Props) => {
           className="rounded-md w-full object-cover"
         />
 
-        <h1 className={`${satoshiBlack.className} text-4xl`}>
+        <h1 className={`${satoshiBlack.className} text-4xl lowercase`}>
           {currentProject.title}
         </h1>
 
-        {
-         Object.values(currentProject.paragraphs).map((paragraph, index) => {
-            return (
-              <p className="parapgraph" key={index}>
-                {paragraph}
-              </p>
-            );
-          })
-        }   
+        {paragraphs}   
       </article>
     </section>
   );

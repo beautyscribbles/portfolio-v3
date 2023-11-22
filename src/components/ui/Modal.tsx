@@ -45,12 +45,12 @@ export default function Modal({ children }: { children: React.ReactNode }) {
   return (
     <div
       ref={overlay}
-      className="fixed z-20 left-0 right-0 top-0 bottom-0  bg-black/70"
+      className="fixed z-20 left-0 right-0 top-0 bottom-0  bg-black/70 "
       onClick={onClick}
     >
       <div
         ref={wrapper}
-        className="absolute bg-[#202020] h-screen overflow-y-scroll w-full right-0 lg:w-7/12"
+        className="absolute grainy bg-[#202020] h-screen overflow-y-scroll w-full right-0 lg:w-7/12" 
       >
         <div>
           <header className="p-4 flex gap-4 items-center">
