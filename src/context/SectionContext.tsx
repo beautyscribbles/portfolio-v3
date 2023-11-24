@@ -29,7 +29,7 @@ const sections: Section[] = [
   { id: 2, name: "skills", link: "skills" },
   { id: 3, name: "projects", link: "projects" },
   { id: 4, name: "contact", link: "contact" },
-  { id: 5, name: "blogs", link: "blogs" },
+  // { id: 5, name: "blogs", link: "blogs" },
 ];
 
 export default function SectionContextProvider(props: Props) {

@@ -22,41 +22,43 @@ const Projects = () => {
     const name = project.name.toLowerCase();
 
     return (
-      <Link
-        scroll={false}
-        href={`/project/${name}#projects`}
-        id={project.id.toString()}
+      <figure
         key={project.id}
-        className={`relative ${masonry} flex items-center opacity-60 hover:opacity-100 transition-all ease-in-out duration-300 mb-3`}
+        className={`opacity-60 hover:opacity-100 animation mb-3 max-w-[18.75rem] relative ${masonry}`}
       >
-        <figure>
+        <Link
+          scroll={false}
+          href={`/project/${name}#projects`}
+          id={project.id.toString()}
+        >
           <Image
             src={project.img}
             alt={name}
             width={300}
             height={200}
-            className="object-cover rounded-lg sm:w-full cursor-pointer "
+            className="object-cover rounded-lg sm:w-full cursor-pointer animation hover:border-primary border-2 border-transparent"
           />
+        </Link>
 
-          <figcaption className="my-2 ">
-            <h3
-              className={`${satoshiBold.className} flex justify-between items-center text-xl lowercase`}
-            >
-              <span>{name}</span>
-              <span className="cursor-pointer">
-                <TiArrowRight size={25} />
-              </span>
-            </h3>
-            <p className="text-[0.9rem] opacity-50  lowercase">
-              {project.title}
-            </p>
+        <figcaption className="my-2 ">
+          <h3
+            className={`${satoshiBold.className} flex justify-between items-center text-xl lowercase`}
+          >
+            <span>{name}</span>
+            <Link href={`/project/${name}#projects`} scroll={false}>
+              <TiArrowRight size={25} />
+            </Link>
+          </h3>
+          <p className="text-[0.9rem] opacity-50  lowercase">{project.title}</p>
 
-            <p className="text-sm opacity-50 lowercase">
-              {project.stack.join(", ")}
-            </p>
-          </figcaption>
-        </figure>
-      </Link>
+          <p className="text-sm opacity-50 lowercase">
+            {project.stack
+              .join(", ")
+              .toLowerCase()
+              .replace("redux toolkit", "redux")}
+          </p>
+        </figcaption>
+      </figure>
     );
   });
 

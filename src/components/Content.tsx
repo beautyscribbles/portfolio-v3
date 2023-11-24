@@ -8,7 +8,7 @@ import Container from "@/components/ui/Container";
 
 const Content = () => {
   return (
-    <Container>
+    <Container className="md:pr-8">
       <div className="md:hidden">
         <Navbar />
       </div>
