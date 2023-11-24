@@ -56,7 +56,7 @@ const Contact = () => {
   });
 
   return (
-    <Section sectionName="contact" className="lg:min-h-[50rem]">
+    <Section sectionName="contact" className="spacing ">
       <article className="flex flex-col gap-16">
         <Heading text="contact." />
 

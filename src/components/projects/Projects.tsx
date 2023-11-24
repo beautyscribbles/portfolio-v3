@@ -63,7 +63,7 @@ const Projects = () => {
   });
 
   return (
-    <Section sectionName="projects" className="min-h-[80rem] sm:min-h-0 ">
+    <Section sectionName="projects" className="spacing">
       <article className="flex flex-col gap-24 w-full">
         <Heading text="projects." />
 

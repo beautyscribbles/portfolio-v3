@@ -5,7 +5,10 @@ import { Fragment } from "react";
 
 const About = () => {
   return (
-    <Section sectionName="about" className="relative">
+    <Section
+      sectionName="about"
+      className="relative spacing md:h-[120vh] lg:h-screen"
+    >
       <article className=" flex flex-col gap-16">
         <Heading text="about me." />
 
@@ -21,6 +24,7 @@ const About = () => {
             <p className={`opacity-20 text-sm`}>&#60;p&#62;</p>
             <p className="paragraph">
               7x binger of Archer 🏆 and 3x binger of Arrested Development. 🏆
+              <br></br>
               Professional book re-reader with a weakness for anything mafia
               related. 📚
             </p>
@@ -33,12 +37,10 @@ const About = () => {
               into every project I touch.
             </p>
 
-            <p className="parapgraph mt-8">
-              I&apos;m a firm believer in the power of a good story and I love
-              to tell them through my work. I&apos;m a lifelong learner and
-              I&apos;m always looking for new ways to grow and improve my
-              skills. I&apos;m currently learning Vue and I&apos;m excited to
-              see where it takes me.
+            <p className="paragraph mt-8">
+              I&apos;m a lifelong learner and I&apos;m always looking for new
+              ways to grow and improve my skills. I&apos;m currently learning
+              Vue and I&apos;m excited to see where it takes me.
             </p>
 
             <p className="paragraph mt-8">

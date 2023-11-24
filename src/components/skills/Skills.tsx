@@ -18,10 +18,7 @@ const Skills = () => {
   });
 
   return (
-    <Section
-      sectionName="skills"
-      className="relative min-h-[50rem] md:min-h-0 "
-    >
+    <Section sectionName="skills" className="relative spacing  ">
       <article className="flex flex-col gap-16">
         <Heading text="skills." />
 

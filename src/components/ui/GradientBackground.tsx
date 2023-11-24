@@ -1,14 +1,14 @@
 import React from "react";
 
 interface Props {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const GradientBackground = (props: Props) => {
   const { children } = props;
   return (
     <div
-      className={`relative h-[85vh] flex flex-col items-center justify-center `}
+      className={`absolute top-0 left-0 w-full h-[90vh] flex flex-col items-center justify-center `}
     >
       <div
         className={`absolute inset-0 flex flex-wrap m-auto pointer-events-none -z-10 blur-[8em] opacity-50  scale-80 -left-20`}
