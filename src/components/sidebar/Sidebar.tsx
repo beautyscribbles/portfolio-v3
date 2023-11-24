@@ -6,7 +6,12 @@ import Container from "@/components/ui/Container";
 import { useSectionContext } from "@/context/SectionContext";
 import Link from "next/link";
 
-const Sidebar = () => {
+interface Props {
+  className: string;
+}
+
+const Sidebar = (props: Props) => {
+  const { className } = props;
   const { sections, currentSection, setCurrentSection } = useSectionContext();
 
   const list = sections.map((section) => {
@@ -35,7 +40,7 @@ const Sidebar = () => {
   });
 
   return (
-    <aside className="h-full">
+    <aside className={`h-full ${className} `}>
       <Container className="h-full">
         <Navbar />
 

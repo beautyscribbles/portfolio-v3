@@ -3,11 +3,12 @@ import Sidebar from "@/components/sidebar/Sidebar";
 
 const Wrapper = () => {
   return (
-    <div className="h-screen relative w-full grid grid-cols-1 md:grid-cols-[40%,60%] lg:grid-cols-[35%,65%]">
-      <div className="hidden h-screen md:grid md:fixed md:w-[40%] lg:w-[35%]">
-        <Sidebar />
-      </div>
-      <main className="h-full md:absolute md:left-[40%] lg:left-[35%] md:w-[60%] lg:w-[65%]">
+    <div className="h-screen ">
+      {/* <Sidebar className="hidden md:fixed md:top-0 md:w-4/12 xl:w-3/12 md:block bg-lime-900" /> */}
+      <Sidebar className="hidden md:overflow-x-hidden w-full md:fixed md:top-0 max-w-[20rem] md:block " />
+
+      {/* <main className="h-full md:w-8/12  md:mr-0 md:ml-auto bg-emerald-900"> */}
+      <main className="h-full md:ml-[20rem] ">
         <Content />
       </main>
     </div>

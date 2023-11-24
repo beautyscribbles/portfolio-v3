@@ -19,8 +19,12 @@ body {
 }
 
 @layer components {
+  .spacing {
+    @apply mt-20 mb-60 md:mb-32 lg:mb-20
+  }
+
   .paragraph {
-    @apply text-sm md:text-[0.92rem] max-w-xl;
+    @apply text-sm md:text-[0.92rem] max-w-xl leading-6
   }
 
   .animation {
@@ -29,6 +33,7 @@ body {
 }
 
 @layer utilities {
+
 
   .stroked {
 
