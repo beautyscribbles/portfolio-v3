@@ -7,7 +7,7 @@ import Link from "next/link";
 import { TiArrowRight } from "react-icons/ti";
 
 const Projects = () => {
-  const projectData = Array.from(projectInfo).map(([_, value], i) => {
+  const projectData = Array.from(projectInfo).map(([_key, value], i) => {
     return {
       id: i,
       name: value.key,
@@ -24,7 +24,7 @@ const Projects = () => {
     return (
       <figure
         key={project.id}
-        className={`opacity-60 hover:opacity-100 animation mb-3 max-w-[18.75rem] relative ${masonry}`}
+        className={`opacity-60 hover:opacity-100 mb-4 animation max-w-[18.75rem] relative ${masonry}`}
       >
         <Link
           scroll={false}
@@ -40,16 +40,15 @@ const Projects = () => {
           />
         </Link>
 
-        <figcaption className="my-2 ">
-          <h3
-            className={`${satoshiBold.className} flex justify-between items-center text-xl lowercase`}
+        <figcaption className="mt-1">
+          <p
+            className={`${satoshiBold.className} flex justify-between items-center text-base lowercase`}
           >
-            <span>{name}</span>
+            <span>{project.title}</span>
             <Link href={`/project/${name}#projects`} scroll={false}>
               <TiArrowRight size={25} />
             </Link>
-          </h3>
-          <p className="text-[0.9rem] opacity-50  lowercase">{project.title}</p>
+          </p>
 
           <p className="text-sm opacity-50 lowercase">
             {project.stack
@@ -63,11 +62,11 @@ const Projects = () => {
   });
 
   return (
-    <Section sectionName="projects" className="spacing">
+    <Section sectionName="projects" className="spacing lg:h-[110vh]">
       <article className="flex flex-col gap-24 w-full">
         <Heading text="projects." />
 
-        <ul className="grid grid-cols-1 gap-8 w-full  sm:grid-cols-2 lg:gap-12">
+        <ul className="grid grid-cols-1 gap-8 max-w-2xl sm:grid-cols-2">
           {projects}
         </ul>
       </article>

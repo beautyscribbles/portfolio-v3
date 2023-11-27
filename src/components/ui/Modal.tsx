@@ -1,14 +1,22 @@
 "use client";
+import ContactLinks from "@/components/ContactLinks";
 import Container from "@/components/ui/Container";
 import { useRouter } from "next/navigation";
-import { MouseEventHandler, useCallback, useEffect, useRef } from "react";
+import {
+  MouseEventHandler,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import { PiArrowsOutSimpleFill } from "react-icons/pi";
+import { PiArrowsInSimpleFill, PiArrowsOutSimpleFill } from "react-icons/pi";
 
 export default function Modal({ children }: { children: React.ReactNode }) {
   const overlay = useRef(null);
-  const wrapper = useRef(null);
+  const wrapper = useRef<HTMLDivElement | null>(null);
   const router = useRouter();
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const onDismiss = useCallback(() => {
     router.back();
@@ -35,12 +43,16 @@ export default function Modal({ children }: { children: React.ReactNode }) {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [onKeyDown]);
 
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
+  // useEffect(() => {
+  //   document.body.style.overflow = "hidden";
+  //   return () => {
+  //     document.body.style.overflow = "auto";
+  //   };
+  // }, []);
+
+  function expandModal() {
+    setIsExpanded((state) => !state);
+  }
 
   return (
     <div
@@ -50,19 +62,33 @@ export default function Modal({ children }: { children: React.ReactNode }) {
     >
       <div
         ref={wrapper}
-        className="absolute grainy bg-[#202020] h-screen overflow-y-scroll w-full right-0 lg:w-7/12" 
+        className={`absolute grainy bg-[#202020] h-screen overflow-y-scroll w-full right-0 animate-width ${
+          isExpanded ? "" : "lg:w-7/12"
+        }`}
       >
-        <div>
-          <header className="p-4 flex gap-4 items-center">
-            <MdKeyboardDoubleArrowRight
-              size={25}
-              className="cursor-pointer"
-              onClick={onDismiss}
+        <header className="p-4 flex gap-4 items-center">
+          <MdKeyboardDoubleArrowRight
+            size={25}
+            className="cursor-pointer"
+            onClick={onDismiss}
+          />
+          {!isExpanded ? (
+            <PiArrowsOutSimpleFill
+              size={20}
+              className="cursor-pointer hidden lg:block"
+              onClick={expandModal}
             />
-            <PiArrowsOutSimpleFill size={20} className="cursor-pointer" />
-          </header>
-          <Container>{children}</Container>
-        </div>
+          ) : (
+            <PiArrowsInSimpleFill
+              size={20}
+              className="cursor-pointer hidden lg:block"
+              onClick={expandModal}
+            />
+          )}
+
+          <ContactLinks className="ml-auto" />
+        </header>
+        <Container className="max-w-2xl lg:mx-auto">{children}</Container>
       </div>
     </div>
   );

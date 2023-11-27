@@ -15,6 +15,7 @@ type ProjectInfo = {
   stack: string[];
   source: URL;
   demo: URL;
+  video: string;
   title: string;
   paragraphs: {
     [key: string]: string;
@@ -32,7 +33,8 @@ projectInfo.set("bookmark", {
   icon: (
     <BsFillJournalBookmarkFill className="my-3" size={size} />
   ) as JSX.Element,
-  img: "/bookmark.png",
+  img: "/bookmark.webp",
+  video: "/bookmark-recording.mov",
   stack: ["TypeScript", "React JS", "Redux Toolkit", "Firebase"],
   source: {
     name: "m-oniqu3/bookmark-it",
@@ -53,7 +55,8 @@ projectInfo.set("natura", {
   key: "natura",
   name: "Natura",
   icon: <MdSportsGymnastics className="my-3" size={size} />,
-  img: "/natura.jpeg",
+  img: "/natura.webp",
+  video: "/natura-recording.mov",
   stack: ["React JS", "CSS Modules"],
   source: {
     name: "m-oniqu3/gym-natura",
@@ -70,7 +73,8 @@ projectInfo.set("movie-memory", {
   key: "movie-memory",
   name: "Movie Memory",
   icon: <MdMovie className="my-3" size={size} />,
-  img: "/moviememory.png",
+  img: "/moviememory.webp",
+  video: "/movie-memory-recording.mov",
   stack: ["TypeScript", "SCSS", "Firebase", "TMD API"],
   source: {
     name: "m-oniqu3/movie-memory",
@@ -92,7 +96,8 @@ projectInfo.set("finest-and-co", {
   key: "finest-and-co",
   name: "Finest & Co",
   icon: <FaCouch className="my-3" size={size} />,
-  img: "/finestandco.jpeg",
+  img: "/finestandco.webp",
+  video: "/finest-recording.mov",
   stack: ["React JS", "Redux Toolkit", "Firebase"],
   source: {
     name: "m-oniqu3/finest-and-co",
