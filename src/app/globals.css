@@ -42,8 +42,6 @@ body {
     -webkit-transition: width 0.3s ease-in-out;
   }
 
-
-
   .stroked {
     color: transparent;
     -webkit-text-stroke: 1px rgba(48, 48, 48, 0.489);
