@@ -44,7 +44,9 @@ body {
 
   .stroked {
     color: transparent;
-    -webkit-text-stroke: 1px rgba(48, 48, 48, 0.489);
+    /* -webkit-text-stroke: 1px rgba(48, 48, 48, 0.489); */
+    -webkit-text-stroke: 1px rgba(37, 47, 45, 0.422);
+    /* -webkit-text-stroke: 1px rgba(50, 57, 51, 0.422); */
   }
 
   .heading {
