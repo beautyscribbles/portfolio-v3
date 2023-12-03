@@ -14,7 +14,7 @@ const satoshi = localFont({
 export const metadata: Metadata = {
   title: "Monique McIntyre | Frontend Developer",
   description:
-    "Hi, I'm Monique. Developer by day, book enthusiast by night. With a keen eye for design and an obsession for pixel perfection, I specialize in crafting elegant and user-friendly websites.",
+    "Hi, I'm Monique. Developer by day, book enthusiast by night. With a keen eye for design and an obsession for pixel perfection, I specialize in crafting elegant and user-friendly websites with my knowledge of various technologies",
 };
 
 export default function RootLayout({
